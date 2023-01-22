@@ -3,11 +3,11 @@ import cors from 'cors';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import compression from 'compression';
-import CustomLogger from '../middlewares/logging.middleware';
-import ClansRoute from '../routes/clans.route';
-import MyClanRoute from '../routes/my-clan.route';
+import { CustomLogger } from '../middlewares/logging.middleware';
+import { ClansRoute } from '../routes/clans.route';
+import { MyClanRoute } from '../routes/my-clan.route';
 
-export default function createExpressApp(functionName: string): Express {
+export const CreateExpressApp = (functionName: string): Express => {
   const app = express();
   const router = express.Router();
 

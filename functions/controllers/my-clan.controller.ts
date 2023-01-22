@@ -1,14 +1,8 @@
 ﻿import { Request, Response, NextFunction } from 'express-serve-static-core';
-import CocService from '../services/coc/clans.service';
 import { MY_CLAN_TAG } from '../utils/consts.util';
+import { GetClanInformation } from '../services/coc/clans.service';
 
-const Get = async (req: Request, res: Response, next: NextFunction) => {
-  const clanInformation = await CocService.GetClanInformation(MY_CLAN_TAG);
+export const Get = async (req: Request, res: Response, next: NextFunction) => {
+  const clanInformation = await GetClanInformation(MY_CLAN_TAG);
   res.json(clanInformation);
 };
-
-const MyClanController = {
-  Get
-};
-
-export default MyClanController;

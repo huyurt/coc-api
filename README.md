@@ -1,5 +1,9 @@
 # Clash of Clans Api Consumer
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/89cb3b8c-32cb-421e-b09b-c8d1b0e6a899/deploy-status)](https://app.netlify.com/sites/coc-api-consumer/deploys)
+
+
+
 [index.html](index.html) simply loads html from the Express.js app using
 `<object>`, and the app is hosted at `/.netlify/functions/server`. Examples of
 how to access the Express.js endpoints:
