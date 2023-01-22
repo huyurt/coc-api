@@ -1,11 +1,11 @@
 import serverless from 'serverless-http';
-import expressApp from './app';
+import createExpressApp from './app';
 
 // We need to define our function name for express routes to set the correct base path
 const functionName = 'serverless-http';
 
 // Initialize express app
-const app = expressApp(functionName);
+const app = createExpressApp(functionName);
 
 // Export lambda handler
 exports.handler = serverless(app);

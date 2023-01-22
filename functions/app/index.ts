@@ -1,11 +1,13 @@
-import express from 'express';
+import express, { Express } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import compression from 'compression';
-import customLogger from '../utils/logger';
+import CustomLogger from '../middlewares/logging.middleware';
+import ClansRoute from '../routes/clans.route';
+import MyClanRoute from '../routes/my-clan.route';
 
-export default function expressApp(functionName: string) {
+export default function createExpressApp(functionName: string): Express {
   const app = express();
   const router = express.Router();
 
@@ -15,17 +17,11 @@ export default function expressApp(functionName: string) {
   // Set router base path for local dev
   const routerBasePath = process.env.NODE_ENV === 'dev' ? `/${functionName}` : `/.netlify/functions/${functionName}/`;
 
-  router.get('/joke', async (req, res) => {
-    const data = { Message: ':)' };
-    res.json(data);
-  });
-
-  router.get('/hello/', function(req, res) {
-    res.send('hello world');
-  });
+  ClansRoute(router);
+  MyClanRoute(router);
 
   // Attach logger
-  app.use(morgan(customLogger));
+  app.use(morgan(CustomLogger));
 
   // Setup routes
   app.use(routerBasePath, router);

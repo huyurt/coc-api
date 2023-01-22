@@ -1,6 +1,6 @@
 {
-  "short_name": "Example",
-  "name": "Example",
+  "short_name": "Coc Api Consumer",
+  "name": "Coc Api Consumer",
   "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",
