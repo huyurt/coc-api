@@ -1,7 +1,9 @@
 ﻿import axios from 'axios';
 
-const FirestoreApi = axios.create({
-  baseURL: process.env.FIREBASE_BASE_URL
-});
+export const FirestoreApi = () => {
+  const instance = axios.create({
+    baseURL: process.env.FIREBASE_BASE_URL
+  });
 
-export default FirestoreApi;
+  return instance;
+};

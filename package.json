@@ -7,7 +7,7 @@
     "build:functions": "tsc && netlify-lambda build functions",
     "start": "cross-env NODE_ENV=dev npm-run-all --parallel start:**",
     "start:server": "netlify-lambda serve functions",
-    "serve": "npm-run-all build start",
+    "serve": "cross-env NODE_ENV=dev nodemon ./functions/api.ts",
     "test": "jest",
     "ts-check": "tsc --noEmit --lib ES2015 ./functions/*.ts"
   },
@@ -47,6 +47,7 @@
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
     "netlify-lambda": "^2.0.15",
+    "nodemon": "^2.0.20",
     "npm-run-all": "^4.1.5",
     "parcel-bundler": "^1.12.5",
     "typescript": "^4.9.4"

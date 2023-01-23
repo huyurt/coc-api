@@ -1,11 +1,14 @@
+import dotenv from 'dotenv';
 import serverless from 'serverless-http';
-import createExpressApp from './app';
+import { CreateExpressApp } from './configs/app';
+
+dotenv.config();
 
 // We need to define our function name for express routes to set the correct base path
-const functionName = 'serverless-http';
+const functionName = 'api';
 
 // Initialize express app
-const app = createExpressApp(functionName);
+const app = CreateExpressApp(functionName);
 
 // Export lambda handler
 exports.handler = serverless(app);

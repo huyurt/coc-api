@@ -1,12 +1,10 @@
 ﻿import { Router } from 'express';
 import { ROUTER_PATHS } from '../utils/consts.util';
-import MyClanController from '../controllers/my-clan.controller';
+import { Get } from '../controllers/my-clan.controller';
 
-const MyClanRoute = (router: Router) => {
-  router.get(ROUTER_PATHS.MyClan, MyClanController.Get);
-  //router.post(routerPaths.MyClan, MyClanController.Create);
-  // router.put(`${routerPaths.MyClan}/:id`, MyClanController.Update);
-  // router.delete(`${routerPaths.MyClan}/:id`, MyClanController.Remove);
+export const MyClanRoute = (router: Router) => {
+  router.get(ROUTER_PATHS.MyClan, Get);
+  //router.post(routerPaths.MyClan, Create);
+  // router.put(`${routerPaths.MyClan}/:id`, Update);
+  // router.delete(`${routerPaths.MyClan}/:id`, Remove);
 }
-
-export default MyClanRoute;

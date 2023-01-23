@@ -1,7 +1,7 @@
 import { TokenIndexer } from 'morgan';
 import http from 'http';
 
-const CustomLogger = (tokens: TokenIndexer, req: http.IncomingMessage, res: http.ServerResponse): string => {
+export const CustomLogger = (tokens: TokenIndexer, req: http.IncomingMessage, res: http.ServerResponse): string => {
   const log = [
     tokens.method(req, res),
     tokens.url(req, res),
@@ -15,6 +15,4 @@ const CustomLogger = (tokens: TokenIndexer, req: http.IncomingMessage, res: http
     console.log(log);
   }
   return log;
-}
-
-export default CustomLogger;
+};
