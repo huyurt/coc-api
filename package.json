@@ -7,7 +7,7 @@
     "build:functions": "tsc && netlify-lambda build functions",
     "start": "cross-env NODE_ENV=dev npm-run-all --parallel start:**",
     "start:server": "netlify-lambda serve functions",
-    "serve": "cross-env NODE_ENV=dev nodemon ./functions/serverless-http.ts",
+    "serve": "cross-env NODE_ENV=dev nodemon ./functions/api.ts",
     "test": "jest",
     "ts-check": "tsc --noEmit --lib ES2015 ./functions/*.ts"
   },

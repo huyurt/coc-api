@@ -5,7 +5,7 @@ import { CreateExpressApp } from './configs/app';
 dotenv.config();
 
 // We need to define our function name for express routes to set the correct base path
-const functionName = 'serverless-http';
+const functionName = 'api';
 
 // Initialize express app
 const app = CreateExpressApp(functionName);
