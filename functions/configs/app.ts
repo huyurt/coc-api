@@ -31,5 +31,9 @@ export const CreateExpressApp = (functionName: string): Express => {
   router.use(bodyParser.json());
   router.use(bodyParser.urlencoded({ extended: true }));
 
+  app.listen(9000, () => {
+    console.log("info", 'Server is running at port : ' + 9000);
+  });
+
   return app;
 };

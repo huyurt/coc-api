@@ -10,5 +10,3 @@ export const COC_API_PATHS = {
 export const COLLECTION_KEYS = {
   MyClan: 'MyClan'
 };
-
-export const MY_CLAN_TAG = `#${process.env.COC_CLAN_TAG}`;

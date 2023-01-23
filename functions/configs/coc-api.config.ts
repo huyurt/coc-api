@@ -1,10 +1,12 @@
 ﻿import axios from 'axios';
 
-const CocApi = axios.create({
-  baseURL: process.env.COC_BASE_URL
-});
+export const CocApi = () => {
+  const instance = axios.create({
+    baseURL: process.env.COC_BASE_URL
+  });
 
-CocApi.defaults.headers.common['Authorization'] = `Bearer ${process.env.COC_AUTH_TOKEN}`;
-CocApi.defaults.headers.post['Content-Type'] = 'application/json';
+  instance.defaults.headers.common['Authorization'] = `Bearer ${process.env.COC_AUTH_TOKEN}`;
+  instance.defaults.headers.post['Content-Type'] = 'application/json';
 
-export default CocApi;
+  return instance;
+};
