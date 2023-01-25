@@ -1,8 +1,8 @@
 ﻿import { FirestoreApi } from '../../configs/firestore-api.config';
-import { Clan } from '../../models/clan.model';
 import { Serialize } from '../../utils/firestore-serializer.util';
 import { GetFirestorePath, GetMyClanTag } from '../../utils/helper.util';
-import { COLLECTION_KEYS } from '../../utils/consts.util';
+import { COLLECTION_KEYS } from '../../utils/consts/firestore-api.const.util';
+import { Clan } from '../../models/clan/clan.model';
 
 export const CreateOrUpdateMyClanInformation = async (clanInformation: Clan) => {
   const data = Serialize(clanInformation);
