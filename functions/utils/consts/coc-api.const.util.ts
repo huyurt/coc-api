@@ -4,6 +4,8 @@
     Members: '/members',
     WarLog: '/warlog',
     CurrentWar: '/currentwar',
+    CurrentWarLeagueGroup: '/currentwar/leaguegroup',
+    ClanWarLeagueWar: '/clanwarleagues/wars',
     CapitalRaidSeasons: '/capitalraidseasons'
   },
   League: {
@@ -41,6 +43,16 @@ export const GetWarLogPath = (clanTag: string) => {
 export const GetCurrentWarPath = (clanTag: string) => {
   const clanTagEncoded = encodeURIComponent(clanTag);
   return `${COC_API_PATHS.Clan.Clans}${clanTagEncoded}${COC_API_PATHS.Clan.CurrentWar}`;
+}
+
+export const GetCurrentWarLeagueGroupPath = (clanTag: string) => {
+  const clanTagEncoded = encodeURIComponent(clanTag);
+  return `${COC_API_PATHS.Clan.Clans}${clanTagEncoded}${COC_API_PATHS.Clan.CurrentWarLeagueGroup}`;
+}
+
+export const GetClanWarLeagueWarPath = (warTag: string) => {
+  const warTagEncoded = encodeURIComponent(warTag);
+  return `${COC_API_PATHS.Clan.ClanWarLeagueWar}/${warTagEncoded}`;
 }
 
 export const GetCapitalRaidSeasonsPath = (clanTag: string) => {

@@ -1,4 +1,4 @@
-﻿export interface LastWar {
+﻿export interface CurrentWar {
   state: string
   teamSize: number
   attacksPerMember: number

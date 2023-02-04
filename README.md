@@ -21,3 +21,23 @@ curl https://netlify-express.netlify.com/.netlify/functions/server/another
 curl --header "Content-Type: application/json" --request POST --data '{"json":"POST"}' https://netlify-express.netlify.com/.netlify/functions/server
 ```
 
+
+
+## Clash of Clans Api Reference
+
+| Endpoint                                | Description                                                  |
+| --------------------------------------- | ------------------------------------------------------------ |
+| /clans                                  | Search clans                                                 |
+| /clans/{clanTag}                        | Get clan information                                         |
+| /clans/{clanTag}/warlog                 | Retrieve clan's clan war log                                 |
+| /clans/{clanTag}/currentwar             | Retrieve information about clan's current clan war           |
+| /clans/{clanTag}/currentwar/leaguegroup | Retrieve information about clan's current clan war league group |
+| /clanwarleagues/wars/{warTag}           | Retrieve information about individual clan war league war    |
+| /clans/{clanTag}/members                | List clan members.                                           |
+| /clans/{clanTag}/capitalraidseasons     | Retrieve clan's capital raid seasons                         |
+| /players/{playerTag}                    | Get player information                                       |
+| /leagues                                | List leagues                                                 |
+| /warleagues                             | List war leagues                                             |
+| /capitalleagues                         | List capital leagues                                         |
+| /locations                              | List locations                                               |
+
