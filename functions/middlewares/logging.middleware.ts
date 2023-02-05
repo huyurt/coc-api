@@ -14,5 +14,6 @@ export const CustomLogger = (tokens: TokenIndexer, req: http.IncomingMessage, re
     // Log only in AWS context to get back function logs
     console.log(log);
   }
+  
   return log;
 };

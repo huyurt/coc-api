@@ -6,7 +6,11 @@
 
 ````sh
 npm run serve
+curl http://localhost:9000/api/clans
 curl http://localhost:9000/api/my-clan
+curl http://localhost:9000/api/my-clan/save-members
+curl http://localhost:9000/api/my-clan/save-current-war
+curl http://localhost:9000/api/my-clan/save-league-wars
 ````
 
 

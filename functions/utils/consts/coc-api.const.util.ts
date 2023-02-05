@@ -1,23 +1,23 @@
 ﻿const COC_API_PATHS = {
   Clan: {
-    Clans: '/clans',
-    Members: '/members',
-    WarLog: '/warlog',
-    CurrentWar: '/currentwar',
-    CurrentWarLeagueGroup: '/currentwar/leaguegroup',
-    ClanWarLeagueWar: '/clanwarleagues/wars',
-    CapitalRaidSeasons: '/capitalraidseasons'
+    Clans: '/clans/',
+    Members: '/members/',
+    WarLog: '/warlog/',
+    CurrentWar: '/currentwar/',
+    CurrentWarLeagueGroup: '/currentwar/leaguegroup/',
+    ClanWarLeagueWar: '/clanwarleagues/wars/',
+    CapitalRaidSeasons: '/capitalraidseasons/'
   },
   League: {
-    Leagues: '/leagues',
-    CapitalLeagues: '/capitalleagues',
-    WarLeagues: '/warleagues'
+    Leagues: '/leagues/',
+    CapitalLeagues: '/capitalleagues/',
+    WarLeagues: '/warleagues/'
   },
   Location: {
-    Locations: '/locations'
+    Locations: '/locations/'
   },
   Player: {
-    Players: '/players'
+    Players: '/players/'
   }
 };
 
@@ -30,7 +30,7 @@ export const GetClanPath = (clanTag: string) => {
   return `${COC_API_PATHS.Clan.Clans}${clanTagEncoded}`;
 }
 
-export const GetMembersPath = (clanTag: string) => {
+export const GetClanMembersPath = (clanTag: string) => {
   const clanTagEncoded = encodeURIComponent(clanTag);
   return `${COC_API_PATHS.Clan.Clans}${clanTagEncoded}${COC_API_PATHS.Clan.Members}`;
 }
@@ -52,7 +52,7 @@ export const GetCurrentWarLeagueGroupPath = (clanTag: string) => {
 
 export const GetClanWarLeagueWarPath = (warTag: string) => {
   const warTagEncoded = encodeURIComponent(warTag);
-  return `${COC_API_PATHS.Clan.ClanWarLeagueWar}/${warTagEncoded}`;
+  return `${COC_API_PATHS.Clan.ClanWarLeagueWar}${warTagEncoded}`;
 }
 
 export const GetCapitalRaidSeasonsPath = (clanTag: string) => {
