@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import compression from 'compression';
 import { CustomLogger } from '../middlewares/logging.middleware';
+import { Authentication } from '../middlewares/authentication.middleware';
 import { ClansRoute } from '../routes/clans.route';
 import { MyClanRoute } from '../routes/my-clan.route';
 
@@ -22,6 +23,9 @@ export const CreateExpressApp = (functionName: string): Express => {
 
   // Attach logger
   app.use(morgan(CustomLogger));
+
+  // Authorization
+  app.use(Authentication);
 
   // Setup routes
   app.use(routerBasePath, router);
